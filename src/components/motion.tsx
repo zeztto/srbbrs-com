@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState, type ReactNode } from "react";
+import Link from "next/link";
 
 export function Reveal({
   children,
@@ -66,31 +67,37 @@ export function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8 h-16 flex items-center justify-between">
-        <a
-          href="#"
+        <Link
+          href="/"
           className="font-serif text-xl tracking-[0.25em] text-espresso"
         >
           SRBBRS
-        </a>
+        </Link>
         <div className="hidden md:flex items-center gap-10 text-[13px] tracking-[0.15em] uppercase text-warm-brown">
-          <a
-            href="#menu"
+          <Link
+            href="/#menu"
             className="hover:text-espresso transition-colors duration-300"
           >
             메뉴
-          </a>
-          <a
-            href="#about"
+          </Link>
+          <Link
+            href="/story"
+            className="hover:text-espresso transition-colors duration-300"
+          >
+            스토리
+          </Link>
+          <Link
+            href="/#about"
             className="hover:text-espresso transition-colors duration-300"
           >
             소개
-          </a>
-          <a
-            href="#visit"
+          </Link>
+          <Link
+            href="/#visit"
             className="hover:text-espresso transition-colors duration-300"
           >
             방문
-          </a>
+          </Link>
         </div>
         <button
           className="md:hidden relative w-6 h-4"
@@ -115,15 +122,18 @@ export function Navbar() {
         }`}
       >
         <div className="px-6 pb-6 pt-2 flex flex-col gap-4 text-sm tracking-[0.15em] uppercase text-warm-brown bg-cream/95 backdrop-blur-xl">
-          <a href="#menu" onClick={() => setOpen(false)}>
+          <Link href="/#menu" onClick={() => setOpen(false)}>
             메뉴
-          </a>
-          <a href="#about" onClick={() => setOpen(false)}>
+          </Link>
+          <Link href="/story" onClick={() => setOpen(false)}>
+            스토리
+          </Link>
+          <Link href="/#about" onClick={() => setOpen(false)}>
             소개
-          </a>
-          <a href="#visit" onClick={() => setOpen(false)}>
+          </Link>
+          <Link href="/#visit" onClick={() => setOpen(false)}>
             방문
-          </a>
+          </Link>
         </div>
       </div>
     </nav>
