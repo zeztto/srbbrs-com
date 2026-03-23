@@ -237,6 +237,50 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── Baker ── */}
+      <section className="py-24 md:py-36 px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 md:gap-16 items-center">
+          <Reveal>
+            <div className="relative aspect-[3/4] max-w-md rounded-2xl overflow-hidden">
+              <Image
+                src="/images/baker-portrait.jpg"
+                alt="제빵사 이도현"
+                fill
+                className="object-cover object-top"
+              />
+            </div>
+          </Reveal>
+          <Reveal delay={150}>
+            <p className="text-[11px] tracking-[0.4em] uppercase text-caramel mb-3">
+              Master Baker
+            </p>
+            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-espresso leading-[1.2]">
+              건축을 하던 손이
+              <br />
+              빵을 굽습니다
+            </h2>
+            <div className="mt-8 space-y-5 text-warm-brown text-[15px] leading-[1.9] max-w-md">
+              <p>
+                10년간 건축가로 일하던 이도현은 파리의 작은 불랑주리에서 만난
+                한 조각의 크로와상에 인생을 걸기로 했습니다.
+              </p>
+              <p>
+                르 꼬르동 블루를 거쳐, 도쿄에서 수련하고, 서울로 돌아와 srbbrs를
+                열었습니다. 구조를 아는 손이 만드는 72겹의 결.
+              </p>
+            </div>
+            <div className="mt-10">
+              <Link
+                href="/baker"
+                className="inline-block border border-espresso/15 rounded-full px-8 py-3 text-xs tracking-[0.2em] uppercase text-espresso hover:bg-espresso hover:text-cream transition-all duration-500"
+              >
+                이야기 더 보기
+              </Link>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
       {/* ── Brand Story ── */}
       <section className="relative py-32 md:py-44 px-6">
         <Image
