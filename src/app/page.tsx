@@ -210,7 +210,7 @@ export default function Home() {
             </h2>
             <div className="mt-10 space-y-6 text-cream/65 text-[15px] leading-relaxed">
               <p>
-                srbbrs는 매일 새벽, 정성스럽게 반죽을 접습니다. 프랑스 AOP 인증
+                SRBBRS는 매일 새벽, 정성스럽게 반죽을 접습니다. 프랑스 AOP 인증
                 버터와 국내산 유기농 밀가루만을 사용하여 72겹의 결을
                 만들어냅니다.
               </p>
@@ -265,7 +265,7 @@ export default function Home() {
                 한 조각의 크로와상에 인생을 걸기로 했습니다.
               </p>
               <p>
-                르 꼬르동 블루를 거쳐, 도쿄에서 수련하고, 서울로 돌아와 srbbrs를
+                르 꼬르동 블루를 거쳐, 도쿄에서 수련하고, 서울로 돌아와 SRBBRS를
                 열었습니다. 구조를 아는 손이 만드는 72겹의 결.
               </p>
             </div>
@@ -301,7 +301,7 @@ export default function Home() {
               아름다움
             </h2>
             <p className="mt-8 text-cream/60 text-[15px] leading-[1.9] max-w-xl mx-auto">
-              자연, 웰빙, 여유, 휴식. 빠른 세상 속에서 srbbrs가 지키고 싶은
+              자연, 웰빙, 여유, 휴식. 빠른 세상 속에서 SRBBRS가 지키고 싶은
               네 가지 가치와 크로와상에 담긴 이야기.
             </p>
           </Reveal>

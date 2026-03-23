@@ -4,9 +4,26 @@ import Link from "next/link";
 import { Navbar, Reveal } from "@/components/motion";
 
 export const metadata: Metadata = {
-  title: "Brand Story | SRBBRS",
+  title: "브랜드 스토리",
   description:
-    "자연, 웰빙, 여유, 휴식. srbbrs가 추구하는 느린 것들의 아름다움.",
+    "자연, 웰빙, 여유, 휴식. SRBBRS가 추구하는 느린 것들의 아름다움. 크로와상에 담긴 네 가지 가치.",
+  openGraph: {
+    title: "브랜드 스토리 | SRBBRS",
+    description:
+      "자연, 웰빙, 여유, 휴식. SRBBRS가 추구하는 느린 것들의 아름다움.",
+    url: "https://srbbrs.com/story",
+    images: [
+      {
+        url: "/og/story.jpg",
+        width: 1200,
+        height: 630,
+        alt: "SRBBRS 브랜드 스토리",
+      },
+    ],
+  },
+  alternates: {
+    canonical: "https://srbbrs.com/story",
+  },
 };
 
 const values = [
@@ -14,7 +31,7 @@ const values = [
     num: "01",
     title: "자연",
     en: "Nature",
-    body: "우리는 자연이 주는 리듬을 따릅니다. 계절이 바뀌면 재료도 바뀌고, 반죽의 온도도, 발효의 시간도 달라집니다. 자연의 흐름 안에서 가장 좋은 순간을 기다리는 것—그것이 srbbrs의 시작입니다.",
+    body: "우리는 자연이 주는 리듬을 따릅니다. 계절이 바뀌면 재료도 바뀌고, 반죽의 온도도, 발효의 시간도 달라집니다. 자연의 흐름 안에서 가장 좋은 순간을 기다리는 것—그것이 SRBBRS의 시작입니다.",
   },
   {
     num: "02",
@@ -26,13 +43,13 @@ const values = [
     num: "03",
     title: "여유",
     en: "Leisure",
-    body: "좋은 크로와상에는 시간이 필요합니다. 서두르지 않는 발효, 천천히 접어 올리는 반죽, 그리고 갓 구워낸 빵을 음미하는 순간. srbbrs는 빠른 세상 속에서 느림의 가치를 지킵니다.",
+    body: "좋은 크로와상에는 시간이 필요합니다. 서두르지 않는 발효, 천천히 접어 올리는 반죽, 그리고 갓 구워낸 빵을 음미하는 순간. SRBBRS는 빠른 세상 속에서 느림의 가치를 지킵니다.",
   },
   {
     num: "04",
     title: "휴식",
     en: "Rest",
-    body: "일상에 마침표가 아닌 쉼표를 찍는 공간. 따뜻한 크로와상 한 조각과 커피 한 잔이 만드는 작은 쉼. srbbrs는 당신의 하루 속 가장 고요한 순간이 되고 싶습니다.",
+    body: "일상에 마침표가 아닌 쉼표를 찍는 공간. 따뜻한 크로와상 한 조각과 커피 한 잔이 만드는 작은 쉼. SRBBRS는 당신의 하루 속 가장 고요한 순간이 되고 싶습니다.",
   },
 ];
 
@@ -63,7 +80,7 @@ export default function StoryPage() {
           <p className="mt-6 max-w-lg text-cream/60 text-[15px] leading-relaxed animate-hero delay-2">
             자연의 시간 속에서 태어나는 한 조각의 크로와상.
             <br />
-            srbbrs가 추구하는 삶의 결에 대하여.
+            SRBBRS가 추구하는 삶의 결에 대하여.
           </p>
         </div>
       </section>
@@ -86,7 +103,7 @@ export default function StoryPage() {
               빠르게 흘러가는 하루 속에서, 잠시 멈춰 서는 시간이 있습니다.
               갓 구워낸 크로와상의 따스한 온기, 버터가 녹아드는 향기,
               바삭한 첫 한 입의 소리. 그 작은 순간들이 모여
-              우리의 하루를 더 풍요롭게 만든다고 srbbrs는 믿습니다.
+              우리의 하루를 더 풍요롭게 만든다고 SRBBRS는 믿습니다.
             </p>
           </Reveal>
         </div>
@@ -140,7 +157,7 @@ export default function StoryPage() {
               </h2>
               <p className="mt-8 text-warm-brown text-[15px] leading-[1.9] max-w-md">
                 프랑스 AOP 인증 버터, 국내산 유기농 밀가루, 오랜 시간 키워온
-                자연 발효종. srbbrs의 모든 크로와상은 이 세 가지로 시작됩니다.
+                자연 발효종. SRBBRS의 모든 크로와상은 이 세 가지로 시작됩니다.
                 불필요한 첨가물을 넣지 않습니다. 마가린을 쓰지 않습니다.
                 재료 본연의 맛이 스스로 말하도록, 우리는 한 걸음 뒤에
                 서 있습니다.
@@ -177,7 +194,7 @@ export default function StoryPage() {
               태어납니다&rdquo;
             </blockquote>
             <p className="mt-8 text-cream/50 text-sm tracking-[0.2em] uppercase">
-              — srbbrs
+              — SRBBRS
             </p>
           </Reveal>
         </div>
@@ -208,7 +225,7 @@ export default function StoryPage() {
                 좋은 크로와상에는 시간이 필요합니다. 새벽에 시작한 반죽은 길고
                 느린 발효를 거치며 풍미를 쌓아갑니다. 72겹의 결을 만들기 위해
                 접고, 쉬고, 다시 접는 과정을 반복합니다. 그리고 마침내 오븐에서
-                나온 크로와상을 천천히 음미하는 순간—그것이 srbbrs가 지키고 싶은
+                나온 크로와상을 천천히 음미하는 순간—그것이 SRBBRS가 지키고 싶은
                 여유입니다.
               </p>
             </Reveal>
@@ -230,7 +247,7 @@ export default function StoryPage() {
                 작은 쉼표
               </h2>
               <p className="mt-8 text-warm-brown text-[15px] leading-[1.9] max-w-md">
-                srbbrs는 단순한 베이커리가 아닙니다. 바쁜 하루 속에서 잠시
+                SRBBRS는 단순한 베이커리가 아닙니다. 바쁜 하루 속에서 잠시
                 멈추어 서는 공간, 일상에 마침표가 아닌 쉼표를 찍는 곳입니다.
                 따뜻한 크로와상 한 조각과 커피 한 잔이 만드는 고요한 시간.
                 그 순간만큼은 온전히 나를 위한 시간이 됩니다.

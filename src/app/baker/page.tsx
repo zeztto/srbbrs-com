@@ -4,9 +4,26 @@ import Link from "next/link";
 import { Navbar, Reveal } from "@/components/motion";
 
 export const metadata: Metadata = {
-  title: "제빵사 이도현 | SRBBRS",
+  title: "제빵사 이도현",
   description:
-    "건축을 하던 손이 반죽을 만지기 시작했습니다. srbbrs 제빵사 이도현의 이야기.",
+    "건축을 하던 손이 반죽을 만지기 시작했습니다. SRBBRS 제빵사 이도현의 이야기.",
+  openGraph: {
+    title: "제빵사 이도현 | SRBBRS",
+    description:
+      "건축을 하던 손이 반죽을 만지기 시작했습니다. SRBBRS 제빵사 이도현의 이야기.",
+    url: "https://srbbrs.com/baker",
+    images: [
+      {
+        url: "/og/baker.jpg",
+        width: 1200,
+        height: 630,
+        alt: "SRBBRS 제빵사 이도현",
+      },
+    ],
+  },
+  alternates: {
+    canonical: "https://srbbrs.com/baker",
+  },
 };
 
 export default function BakerPage() {
