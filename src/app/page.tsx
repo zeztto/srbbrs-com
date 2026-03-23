@@ -1,65 +1,258 @@
-import Image from "next/image";
+import { Navbar, Reveal } from "@/components/motion";
+
+const menuItems = [
+  {
+    name: "클래식 크로와상",
+    en: "Classic Croissant",
+    desc: "72겹의 순수한 버터 레이어. 프랑스 AOP 버터만을 사용한 정통 크로와상.",
+    price: "₩4,500",
+    featured: true,
+    bg: "bg-[#E8D5B7]",
+    num: "01",
+  },
+  {
+    name: "아몬드 크로와상",
+    en: "Almond Croissant",
+    desc: "프랑지파네 크림과 슬라이스 아몬드.",
+    price: "₩5,500",
+    featured: false,
+    bg: "bg-[#E5DDD3]",
+    num: "02",
+  },
+  {
+    name: "팡 오 쇼콜라",
+    en: "Pain au Chocolat",
+    desc: "벨기에산 다크 초콜릿 두 줄기.",
+    price: "₩5,000",
+    featured: false,
+    bg: "bg-[#D6C8B8]",
+    num: "03",
+  },
+  {
+    name: "크로플",
+    en: "Croffle",
+    desc: "바삭하게 프레스한 크로와상 와플.",
+    price: "₩6,000",
+    featured: false,
+    bg: "bg-[#ECDCC9]",
+    num: "04",
+  },
+  {
+    name: "시즌 스페셜",
+    en: "Season Special",
+    desc: "계절의 재료로 만드는 한정 크로와상.",
+    price: "₩7,000~",
+    featured: false,
+    bg: "bg-[#DED4C6]",
+    num: "05",
+  },
+];
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <main className="overflow-x-hidden">
+      <Navbar />
+
+      {/* ── Hero ── */}
+      <section className="relative min-h-svh flex items-center justify-center px-6">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(193,154,107,0.06)_0%,_transparent_70%)]" />
+        <div className="relative text-center max-w-4xl">
+          <h1 className="font-serif text-5xl md:text-7xl lg:text-[5.5rem] leading-[1.15] tracking-tight text-espresso animate-hero">
+            매일 아침,
+            <br />
+            버터의 결을 굽다
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
+          <p className="mt-8 text-sm md:text-base tracking-[0.3em] uppercase text-warm-brown animate-hero delay-1">
+            Artisan Croissant Bakery
+          </p>
+          <div className="mt-14 animate-hero delay-2">
             <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+              href="#menu"
+              className="inline-block border border-espresso/15 rounded-full px-10 py-3.5 text-xs tracking-[0.2em] uppercase text-espresso hover:bg-espresso hover:text-cream transition-all duration-500"
             >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+              메뉴 보기
+            </a>
+          </div>
+        </div>
+        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center animate-hero delay-3">
+          <div className="w-px h-10 bg-gradient-to-b from-transparent to-espresso/20" />
+          <p className="mt-3 text-[10px] tracking-[0.3em] uppercase text-warm-brown/50">
+            Scroll
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      {/* ── Marquee ── */}
+      <div className="bg-espresso py-4 overflow-hidden select-none">
+        <div className="animate-marquee flex whitespace-nowrap">
+          {[...Array(6)].map((_, i) => (
+            <span
+              key={i}
+              className="text-cream/50 text-[11px] tracking-[0.4em] uppercase mx-6"
+            >
+              Freshly Baked&nbsp;&nbsp;◆&nbsp;&nbsp;Hand
+              Crafted&nbsp;&nbsp;◆&nbsp;&nbsp;Since
+              2024&nbsp;&nbsp;◆&nbsp;&nbsp;72
+              Layers&nbsp;&nbsp;◆&nbsp;&nbsp;AOP
+              Butter&nbsp;&nbsp;◆&nbsp;&nbsp;
+            </span>
+          ))}
         </div>
-      </main>
-    </div>
+      </div>
+
+      {/* ── Menu ── */}
+      <section id="menu" className="py-24 md:py-36 px-6 lg:px-8 max-w-7xl mx-auto">
+        <Reveal>
+          <p className="text-[11px] tracking-[0.4em] uppercase text-warm-brown mb-3">
+            Our Menu
+          </p>
+          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-espresso">
+            Signature
+          </h2>
+        </Reveal>
+
+        <div className="mt-14 md:mt-20 grid grid-cols-1 md:grid-cols-3 gap-4">
+          {menuItems.map((item, i) => (
+            <Reveal
+              key={item.en}
+              delay={i * 80}
+              className={item.featured ? "md:col-span-2" : ""}
+            >
+              <div
+                className={`${item.bg} rounded-2xl p-8 md:p-10 h-full min-h-[220px] ${
+                  item.featured ? "md:min-h-[320px]" : ""
+                } flex flex-col justify-between relative overflow-hidden group cursor-default transition-transform duration-500 hover:scale-[0.98]`}
+              >
+                <span className="absolute -bottom-6 -right-2 font-serif text-[100px] md:text-[140px] leading-none text-espresso/[0.04] select-none pointer-events-none">
+                  {item.num}
+                </span>
+                <div className="relative">
+                  <p className="text-[11px] tracking-[0.2em] uppercase text-espresso/35">
+                    {item.en}
+                  </p>
+                  <h3 className="font-serif text-2xl md:text-3xl text-espresso mt-2">
+                    {item.name}
+                  </h3>
+                  <p className="mt-3 text-sm text-espresso/55 leading-relaxed max-w-sm">
+                    {item.desc}
+                  </p>
+                </div>
+                <p className="relative mt-6 text-[15px] tracking-wide text-espresso/75">
+                  {item.price}
+                </p>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </section>
+
+      {/* ── About ── */}
+      <section id="about" className="py-24 md:py-36 bg-espresso text-cream">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 grid md:grid-cols-2 gap-16 md:gap-24 items-center">
+          <Reveal>
+            <p className="text-[11px] tracking-[0.4em] uppercase text-cream/35 mb-3">
+              Our Story
+            </p>
+            <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.15]">
+              새벽 4시,
+              <br />
+              반죽이
+              <br />
+              시작됩니다
+            </h2>
+          </Reveal>
+          <Reveal delay={150}>
+            <div className="space-y-6 text-cream/65 text-[15px] leading-relaxed">
+              <p>
+                srbbrs는 매일 새벽, 정성스럽게 반죽을 접습니다. 프랑스 AOP 인증
+                버터와 국내산 유기농 밀가루만을 사용하여 72겹의 결을
+                만들어냅니다.
+              </p>
+              <p>
+                기다림의 시간이 만드는 깊은 풍미. 오랜 발효와 숙성을 거친
+                반죽만이 가질 수 있는 바삭함과 부드러움의 완벽한 균형.
+              </p>
+              <p className="text-cream/45">
+                그것이 우리가 크로와상을 대하는 방식입니다.
+              </p>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* ── Accent Marquee ── */}
+      <div className="bg-caramel py-3 overflow-hidden select-none">
+        <div
+          className="animate-marquee flex whitespace-nowrap"
+          style={{ animationDirection: "reverse", animationDuration: "35s" }}
+        >
+          {[...Array(6)].map((_, i) => (
+            <span
+              key={i}
+              className="text-warm-white/80 text-[11px] tracking-[0.4em] uppercase mx-6"
+            >
+              크로와상&nbsp;&nbsp;◆&nbsp;&nbsp;아몬드&nbsp;&nbsp;◆&nbsp;&nbsp;팡
+              오
+              쇼콜라&nbsp;&nbsp;◆&nbsp;&nbsp;크로플&nbsp;&nbsp;◆&nbsp;&nbsp;시즌
+              스페셜&nbsp;&nbsp;◆&nbsp;&nbsp;
+            </span>
+          ))}
+        </div>
+      </div>
+
+      {/* ── Visit ── */}
+      <section
+        id="visit"
+        className="py-24 md:py-36 px-6 lg:px-8 max-w-7xl mx-auto"
+      >
+        <Reveal>
+          <p className="text-[11px] tracking-[0.4em] uppercase text-warm-brown mb-3">
+            Visit Us
+          </p>
+          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-espresso">
+            찾아오기
+          </h2>
+        </Reveal>
+
+        <div className="mt-14 md:mt-20 grid md:grid-cols-3 gap-12 md:gap-8">
+          <Reveal delay={100}>
+            <h3 className="text-[11px] tracking-[0.3em] uppercase text-warm-brown mb-4">
+              Address
+            </h3>
+            <p className="text-lg text-espresso leading-relaxed">
+              서울특별시 성동구
+              <br />
+              서울숲길 17, 1층
+            </p>
+          </Reveal>
+          <Reveal delay={200}>
+            <h3 className="text-[11px] tracking-[0.3em] uppercase text-warm-brown mb-4">
+              Hours
+            </h3>
+            <p className="text-lg text-espresso">매일 08:00 — 21:00</p>
+            <p className="mt-1 text-sm text-warm-brown">매주 월요일 휴무</p>
+          </Reveal>
+          <Reveal delay={300}>
+            <h3 className="text-[11px] tracking-[0.3em] uppercase text-warm-brown mb-4">
+              Contact
+            </h3>
+            <p className="text-lg text-espresso">@srbbrs_official</p>
+            <p className="mt-1 text-sm text-warm-brown">02-1234-5678</p>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* ── Footer ── */}
+      <footer className="border-t border-espresso/8 py-10 px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+          <span className="font-serif text-lg tracking-[0.25em] text-espresso">
+            SRBBRS
+          </span>
+          <p className="text-[11px] text-warm-brown/60 tracking-wide">
+            © 2024 SRBBRS. All rights reserved.
+          </p>
+        </div>
+      </footer>
+    </main>
   );
 }
