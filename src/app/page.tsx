@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Navbar, Reveal } from "@/components/motion";
 
 const menuItems = [
@@ -232,6 +233,41 @@ export default function Home() {
               />
               <div className="absolute inset-0 bg-espresso/10" />
             </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* ── Brand Story ── */}
+      <section className="relative py-32 md:py-44 px-6">
+        <Image
+          src="/images/story-nature.jpg"
+          alt="자연 풍경"
+          fill
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-espresso/60" />
+        <div className="relative max-w-3xl mx-auto text-center">
+          <Reveal>
+            <p className="text-[11px] tracking-[0.4em] uppercase text-cream/40 mb-4">
+              Brand Story
+            </p>
+            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-cream leading-[1.3]">
+              느린 것들의
+              <br />
+              아름다움
+            </h2>
+            <p className="mt-8 text-cream/60 text-[15px] leading-[1.9] max-w-xl mx-auto">
+              자연, 웰빙, 여유, 휴식. 빠른 세상 속에서 srbbrs가 지키고 싶은
+              네 가지 가치와 크로와상에 담긴 이야기.
+            </p>
+          </Reveal>
+          <Reveal delay={200}>
+            <Link
+              href="/story"
+              className="inline-block mt-12 border border-cream/30 rounded-full px-10 py-3.5 text-xs tracking-[0.2em] uppercase text-cream hover:bg-cream hover:text-espresso transition-all duration-500"
+            >
+              스토리 보기
+            </Link>
           </Reveal>
         </div>
       </section>
