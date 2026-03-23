@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Navbar, Reveal } from "@/components/motion";
 
 const menuItems = [
@@ -7,7 +8,7 @@ const menuItems = [
     desc: "72겹의 순수한 버터 레이어. 프랑스 AOP 버터만을 사용한 정통 크로와상.",
     price: "₩4,500",
     featured: true,
-    bg: "bg-[#E8D5B7]",
+    img: "/images/classic.jpg",
     num: "01",
   },
   {
@@ -16,7 +17,7 @@ const menuItems = [
     desc: "프랑지파네 크림과 슬라이스 아몬드.",
     price: "₩5,500",
     featured: false,
-    bg: "bg-[#E5DDD3]",
+    img: "/images/almond.jpg",
     num: "02",
   },
   {
@@ -25,7 +26,7 @@ const menuItems = [
     desc: "벨기에산 다크 초콜릿 두 줄기.",
     price: "₩5,000",
     featured: false,
-    bg: "bg-[#D6C8B8]",
+    img: "/images/chocolat.jpg",
     num: "03",
   },
   {
@@ -34,7 +35,7 @@ const menuItems = [
     desc: "바삭하게 프레스한 크로와상 와플.",
     price: "₩6,000",
     featured: false,
-    bg: "bg-[#ECDCC9]",
+    img: "/images/croffle.jpg",
     num: "04",
   },
   {
@@ -43,7 +44,7 @@ const menuItems = [
     desc: "계절의 재료로 만드는 한정 크로와상.",
     price: "₩7,000~",
     featured: false,
-    bg: "bg-[#DED4C6]",
+    img: "/images/seasonal.jpg",
     num: "05",
   },
 ];
@@ -55,28 +56,35 @@ export default function Home() {
 
       {/* ── Hero ── */}
       <section className="relative min-h-svh flex items-center justify-center px-6">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(193,154,107,0.06)_0%,_transparent_70%)]" />
+        <Image
+          src="/images/hero.jpg"
+          alt="SRBBRS Bakery"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-espresso/50" />
         <div className="relative text-center max-w-4xl">
-          <h1 className="font-serif text-5xl md:text-7xl lg:text-[5.5rem] leading-[1.15] tracking-tight text-espresso animate-hero">
+          <h1 className="font-serif text-5xl md:text-7xl lg:text-[5.5rem] leading-[1.15] tracking-tight text-cream animate-hero">
             매일 아침,
             <br />
             버터의 결을 굽다
           </h1>
-          <p className="mt-8 text-sm md:text-base tracking-[0.3em] uppercase text-warm-brown animate-hero delay-1">
+          <p className="mt-8 text-sm md:text-base tracking-[0.3em] uppercase text-cream/70 animate-hero delay-1">
             Artisan Croissant Bakery
           </p>
           <div className="mt-14 animate-hero delay-2">
             <a
               href="#menu"
-              className="inline-block border border-espresso/15 rounded-full px-10 py-3.5 text-xs tracking-[0.2em] uppercase text-espresso hover:bg-espresso hover:text-cream transition-all duration-500"
+              className="inline-block border border-cream/30 rounded-full px-10 py-3.5 text-xs tracking-[0.2em] uppercase text-cream hover:bg-cream hover:text-espresso transition-all duration-500"
             >
               메뉴 보기
             </a>
           </div>
         </div>
         <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center animate-hero delay-3">
-          <div className="w-px h-10 bg-gradient-to-b from-transparent to-espresso/20" />
-          <p className="mt-3 text-[10px] tracking-[0.3em] uppercase text-warm-brown/50">
+          <div className="w-px h-10 bg-gradient-to-b from-transparent to-cream/30" />
+          <p className="mt-3 text-[10px] tracking-[0.3em] uppercase text-cream/40">
             Scroll
           </p>
         </div>
@@ -101,7 +109,10 @@ export default function Home() {
       </div>
 
       {/* ── Menu ── */}
-      <section id="menu" className="py-24 md:py-36 px-6 lg:px-8 max-w-7xl mx-auto">
+      <section
+        id="menu"
+        className="py-24 md:py-36 px-6 lg:px-8 max-w-7xl mx-auto"
+      >
         <Reveal>
           <p className="text-[11px] tracking-[0.4em] uppercase text-warm-brown mb-3">
             Our Menu
@@ -118,29 +129,65 @@ export default function Home() {
               delay={i * 80}
               className={item.featured ? "md:col-span-2" : ""}
             >
-              <div
-                className={`${item.bg} rounded-2xl p-8 md:p-10 h-full min-h-[220px] ${
-                  item.featured ? "md:min-h-[320px]" : ""
-                } flex flex-col justify-between relative overflow-hidden group cursor-default transition-transform duration-500 hover:scale-[0.98]`}
-              >
-                <span className="absolute -bottom-6 -right-2 font-serif text-[100px] md:text-[140px] leading-none text-espresso/[0.04] select-none pointer-events-none">
-                  {item.num}
-                </span>
-                <div className="relative">
-                  <p className="text-[11px] tracking-[0.2em] uppercase text-espresso/35">
-                    {item.en}
-                  </p>
-                  <h3 className="font-serif text-2xl md:text-3xl text-espresso mt-2">
-                    {item.name}
-                  </h3>
-                  <p className="mt-3 text-sm text-espresso/55 leading-relaxed max-w-sm">
-                    {item.desc}
-                  </p>
+              {item.featured ? (
+                <div className="rounded-2xl overflow-hidden h-full flex flex-col md:flex-row bg-[#E8D5B7] group cursor-default transition-transform duration-500 hover:scale-[0.98]">
+                  <div className="relative md:w-1/2 aspect-square md:aspect-auto min-h-[280px]">
+                    <Image
+                      src={item.img}
+                      alt={item.name}
+                      fill
+                      className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                  </div>
+                  <div className="p-8 md:p-10 flex flex-col justify-between flex-1 relative overflow-hidden">
+                    <span className="absolute -bottom-6 -right-2 font-serif text-[120px] leading-none text-espresso/[0.04] select-none pointer-events-none">
+                      {item.num}
+                    </span>
+                    <div className="relative">
+                      <p className="text-[11px] tracking-[0.2em] uppercase text-espresso/35">
+                        {item.en}
+                      </p>
+                      <h3 className="font-serif text-2xl md:text-3xl text-espresso mt-2">
+                        {item.name}
+                      </h3>
+                      <p className="mt-4 text-sm text-espresso/55 leading-relaxed">
+                        {item.desc}
+                      </p>
+                    </div>
+                    <p className="relative mt-6 text-[15px] tracking-wide text-espresso/75">
+                      {item.price}
+                    </p>
+                  </div>
                 </div>
-                <p className="relative mt-6 text-[15px] tracking-wide text-espresso/75">
-                  {item.price}
-                </p>
-              </div>
+              ) : (
+                <div className="rounded-2xl overflow-hidden h-full bg-cream-dark group cursor-default transition-transform duration-500 hover:scale-[0.98]">
+                  <div className="relative aspect-[4/3] overflow-hidden">
+                    <Image
+                      src={item.img}
+                      alt={item.name}
+                      fill
+                      className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                  </div>
+                  <div className="p-6 md:p-8 relative overflow-hidden">
+                    <span className="absolute -bottom-4 -right-1 font-serif text-[80px] leading-none text-espresso/[0.04] select-none pointer-events-none">
+                      {item.num}
+                    </span>
+                    <p className="text-[11px] tracking-[0.2em] uppercase text-espresso/35">
+                      {item.en}
+                    </p>
+                    <h3 className="font-serif text-xl md:text-2xl text-espresso mt-1.5">
+                      {item.name}
+                    </h3>
+                    <p className="mt-2 text-sm text-espresso/55 leading-relaxed">
+                      {item.desc}
+                    </p>
+                    <p className="mt-4 text-[15px] tracking-wide text-espresso/75">
+                      {item.price}
+                    </p>
+                  </div>
+                </div>
+              )}
             </Reveal>
           ))}
         </div>
@@ -148,7 +195,7 @@ export default function Home() {
 
       {/* ── About ── */}
       <section id="about" className="py-24 md:py-36 bg-espresso text-cream">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 grid md:grid-cols-2 gap-16 md:gap-24 items-center">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 grid md:grid-cols-2 gap-16 md:gap-20 items-center">
           <Reveal>
             <p className="text-[11px] tracking-[0.4em] uppercase text-cream/35 mb-3">
               Our Story
@@ -160,9 +207,7 @@ export default function Home() {
               <br />
               시작됩니다
             </h2>
-          </Reveal>
-          <Reveal delay={150}>
-            <div className="space-y-6 text-cream/65 text-[15px] leading-relaxed">
+            <div className="mt-10 space-y-6 text-cream/65 text-[15px] leading-relaxed">
               <p>
                 srbbrs는 매일 새벽, 정성스럽게 반죽을 접습니다. 프랑스 AOP 인증
                 버터와 국내산 유기농 밀가루만을 사용하여 72겹의 결을
@@ -175,6 +220,17 @@ export default function Home() {
               <p className="text-cream/45">
                 그것이 우리가 크로와상을 대하는 방식입니다.
               </p>
+            </div>
+          </Reveal>
+          <Reveal delay={150}>
+            <div className="relative aspect-[4/5] rounded-2xl overflow-hidden">
+              <Image
+                src="/images/about.jpg"
+                alt="반죽을 만드는 과정"
+                fill
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-espresso/10" />
             </div>
           </Reveal>
         </div>
@@ -240,6 +296,18 @@ export default function Home() {
             <p className="mt-1 text-sm text-warm-brown">02-1234-5678</p>
           </Reveal>
         </div>
+
+        <Reveal delay={200}>
+          <div className="mt-16 md:mt-24 relative aspect-[21/9] rounded-2xl overflow-hidden">
+            <Image
+              src="/images/cafe.jpg"
+              alt="SRBBRS 카페 인테리어"
+              fill
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-espresso/10" />
+          </div>
+        </Reveal>
       </section>
 
       {/* ── Footer ── */}
