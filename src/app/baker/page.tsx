@@ -229,7 +229,7 @@ export default function BakerPage() {
             SRBBRS
           </Link>
           <p className="text-[11px] text-warm-brown/60 tracking-wide">
-            © 2024 SRBBRS. All rights reserved.
+            © 2026 SRBBRS. All rights reserved.
           </p>
         </div>
       </footer>
